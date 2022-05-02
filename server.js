@@ -9,7 +9,7 @@ const port = 3000;
 
 // listen to requests
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.send('Hello World');
 });
 
 // start server
