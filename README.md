@@ -59,3 +59,29 @@ Visa Hello World
 Visa statiska html sidor (med innehåll som ex bilder, stilmall etc)
 
 Skapa en mapp för innehåll som ska kunna visas via en webbläsarrequest. Vanligen en mapp med namnet public
+
+#### Branch 3-template
+Använd en mall för att presentera gemensamt innehåll på flera sidor. Ex header, footer ...
+
+Kallas för *template engine*
+
+En av de vanligaste modulen som används är *ejs*
+Embedded JavaScript
+
+Installera med kommandot
+`npm install ejs`
+
+Importera ejs 
+`import ejs from 'ejs';`
+
+Bestäm att ejs är den mall som ska användas
+`app.set('view engine', 'ejs');`
+
+Skapa en mappstruktur för filer som har med mallar att göra
+`views`
+
+Innehåller filer, i det här fallet med ejs som "mallmotor" används filtypen .ejs, ex index.ejs
+
+`views/partials`
+Innehållet delar som kan visas på flera sidor, ex en fil med namnet
+header.ejs
