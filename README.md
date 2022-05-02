@@ -18,14 +18,17 @@ Starta om server genom att först avbryta med CTRL+C, därefter starta servern i
 `node server`
 
 OBS - om servern startas om och en port redan används av systemet visas ett felmeddelande i stil med
+
 `...listen EADDRINUSE...` 
 
 Ge följande kommando för att avbryta processen
 
 Windows:
+
 `taskkill /F /IM node.exe`
 
 Linux, OS X:
+
 `killall node`
 
 ***
