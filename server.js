@@ -16,20 +16,15 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
-// listen to '/start'
-app.get('/start', (req, res) => {
-   
-    // processa innehållet från en ejs fil
+// listen to '/start' och ange template metoden render()
+app.get('/start', (req, res) => {   
     res.render('index');
 });
 
-// listen to '/about'
+// listen to '/about'  och ange template metoden render()
 app.get('/about', (req, res) => {
-   
-    // processa innehållet från en ejs fil
     res.render('about');
 });
-
 
 // serve static files
 app.use(express.static('public'));

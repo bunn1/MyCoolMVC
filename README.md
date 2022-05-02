@@ -85,3 +85,14 @@ Innehåller filer, i det här fallet med ejs som "mallmotor" används filtypen .
 `views/partials`
 Innehållet delar som kan visas på flera sidor, ex en fil med namnet
 header.ejs
+
+Exempel på kod som kan rendera innehållet:
+```javascript
+
+// listen to '/start' och ange template metoden render()
+app.get('/start', (req, res) => {
+   
+    // processa innehållet från en ejs fil
+    res.render('index');
+});
+```
