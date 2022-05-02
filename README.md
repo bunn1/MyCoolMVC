@@ -54,3 +54,8 @@ node_modules/
 
 #### Branch 1-hello
 Visa Hello World
+
+#### Branch 2-file
+Visa statiska html sidor (med innehåll som ex bilder, stilmall etc)
+
+Skapa en mapp för innehåll som ska kunna visas via en webbläsarrequest. Vanligen en mapp med namnet public
