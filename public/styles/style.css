@@ -6,3 +6,8 @@ img {
     max-width: 480px;
     width: 100%
 }
+
+header {
+    background-color: darkred;
+    color: white
+}
