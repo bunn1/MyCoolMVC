@@ -96,3 +96,12 @@ app.get('/start', (req, res) => {
     res.render('index');
 });
 ```
+
+En fil men filnamnet .ejs processas av servern innan den skickas till en klient. JavaScript exekveras med taggarna `<% %>` 
+
+För att inkludera en fil används metoden ejs template metoden *include* 
+
+`<%- include('partials/header.ejs') %>`
+ 
+Se olika ejs taggar för att en server ska processa en ejs fil:
+https://www.npmjs.com/package/ejs
