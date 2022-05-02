@@ -29,6 +29,22 @@ OBS - se till att skapa filen .gitignore
 
 Det är en fil som gör det möjligt att bestämma vilka filer/mappas som ska exkluderas från att publiceras på GitHub
 
+I ett Nodejs projekt så kan det exempelvis vara mappen *node_modules* som man inte vill ska publiceras på GitHub. Dessutom kan det vara filer som man använder för att hantera känslig data (typ användarnamn, lösenord, konfigurationer...).
+En vanlig fil för den typen av data är filen med namnet 
+.env 
+
+**.gitignore**
+
+```
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+
+```
+
+
 ***
 
 #### Branch 1-hello
