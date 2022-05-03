@@ -42,7 +42,6 @@ app.use((err, req, res, next) => {
 
     // show response
     return res.status(500).send("Server error, please return later");
-
 });
 
 // start server

@@ -172,3 +172,35 @@ Om objektet inte finns så kan det vara klokt att kontollera först fr att unvik
 
 
 #### Branch 6-error
+
+När servern har processat routes och den fortfarande inte gett en respons hanteras det som fel.
+
+**404** page not found, **500** server error
+
+```javascript
+// handle errors
+
+// 404 not found
+app.get('*', (req, res, next) => {
+    res.render('404');
+});
+
+// server error 500...
+// leading fourth argument is default an error...
+app.use((err, req, res, next) => {
+
+    // log error to file...
+
+    // show response
+    return res.status(500).send("Server error, please return later");
+});
+
+```
+
+***
+
+OBS! Se till att ett server fel (500) inte sänds till en klient eftersom ett sådant fel kan visa information som kan användas för ex en hacker...
+
+*Däremot så bör server fel loggas till en fil för att kunna användas vid felsökning av buggar.*
+
+***
