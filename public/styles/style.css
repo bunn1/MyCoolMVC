@@ -9,5 +9,16 @@ img {
 
 header {
     background-color: darkred;
-    color: white
+    color: white;
+    position: relative;
+}
+
+footer {
+    background-color: darkred;
+    color: white;
+}
+
+header img {
+    width: 100%;
+    height: auto;
 }

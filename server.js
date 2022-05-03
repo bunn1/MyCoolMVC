@@ -26,6 +26,11 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
+// listen to '/contact'  och ange template metoden render()
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
+
 // serve static files
 app.use(express.static('public'));
 
