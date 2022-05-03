@@ -105,3 +105,32 @@ För att inkludera en fil används metoden ejs template metoden *include*
  
 Se olika ejs taggar för att en server ska processa en ejs fil:
 https://www.npmjs.com/package/ejs
+
+#### Branch 4-route
+Skapa moduler som kan hantera requests, placera moduler i mappen *routes*
+
+En modul som hanterar metoden GET kan se ut så här
+
+**routes/start.js**
+```javascript
+
+import express from 'express';
+const router = express.Router();
+
+router.route('/')
+    .get((req, res) => {
+        res.render('index');
+    });
+
+export default router;
+```
+
+Modulen importeras därefter till server.js. Modulen kan hantera flera olika request paths
+
+**server.js**
+
+```javascript
+import routeStart from './routes/start.js';
+app.use('/start', routeStart);
+app.use('/', routeStart);
+```
