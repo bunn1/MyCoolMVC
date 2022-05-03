@@ -12,24 +12,36 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 // listen to requests
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
 
-// listen to '/start' och ange template metoden render()
-app.get('/start', (req, res) => {   
-    res.render('index');
-});
+// routes...
+import routeStart from './routes/start.js';
+app.use('/start', routeStart);
+app.use('/', routeStart);
+
+// uppgift: skapa egna moduler som kan 
+// hantera trafik för sidorna contact och about
+// tips: kopiera den modul som finns redan o redigera den :)
+// routes/start.js
+
+import routeContact from './routes/contact.js';
+app.use('/contact', routeContact);
+import routeAbout from './routes/about.js';
+app.use('/about', routeAbout);
+
+
 
 // listen to '/about'  och ange template metoden render()
-app.get('/about', (req, res) => {
+/* app.get('/about', (req, res) => {
     res.render('about');
 });
-
+ */
 // listen to '/contact'  och ange template metoden render()
-app.get('/contact', (req, res) => {
+/* app.get('/contact', (req, res) => {
     res.render('contact');
 });
+ */
+
+
 
 // serve static files
 app.use(express.static('public'));
