@@ -137,3 +137,37 @@ app.use('/', routeStart);
 
 #### 5-process
 En sida som processas i en template kan basera processen på ett objekt
+
+Objektet skickas med i renderingsmetoden för ejs
+
+**start.js**
+
+```javascript
+import express from 'express';
+const router = express.Router();
+
+let obj = {user: "Flisa Hedenhös", navigationLinks: ["Start", "About", "Contact"], page: "start"};
+
+router.route('/')
+    .get((req, res) => {
+        res.render('index', obj);
+    });
+
+export default router;
+```
+
+Objektet kan sedan hanteras med namnet *locals*, ex *locals.user*, *locals.page*
+
+Ex på locals.user i footer elementet
+
+**footer.ejs**
+
+```javascript
+<footer>
+    Frukt är fint :) <%- locals.user %> 
+</footer>
+```
+
+Om objektet inte finns så kan det vara klokt att kontollera först fr att unvika felmeddeland....
+
+
