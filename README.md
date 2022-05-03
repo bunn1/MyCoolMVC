@@ -171,3 +171,4 @@ Ex på locals.user i footer elementet
 Om objektet inte finns så kan det vara klokt att kontollera först fr att unvika felmeddeland....
 
 
+#### Branch 6-error

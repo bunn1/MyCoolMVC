@@ -27,6 +27,24 @@ app.use('/about', routeAbout);
 // serve static files
 app.use(express.static('public'));
 
+// handle errors
+
+// 404 not found
+app.get('*', (req, res, next) => {
+    res.render('404');
+});
+
+// server error 500...
+// leading fourth argument is default an error...
+app.use((err, req, res, next) => {
+
+    // log error to file...
+
+    // show response
+    return res.status(500).send("Server error, please return later");
+
+});
+
 // start server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
