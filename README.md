@@ -134,3 +134,6 @@ import routeStart from './routes/start.js';
 app.use('/start', routeStart);
 app.use('/', routeStart);
 ```
+
+#### 5-process
+En sida som processas i en template kan basera processen på ett objekt

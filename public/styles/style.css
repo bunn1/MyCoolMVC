@@ -22,3 +22,7 @@ header img {
     width: 100%;
     height: auto;
 }
+
+nav a.active {
+    background-color: yellow;
+}
