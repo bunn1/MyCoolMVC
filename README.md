@@ -22,14 +22,13 @@ OBS - om servern startas om och en port redan används av systemet visas ett fel
 
 Ge följande kommando för att avbrta processen
 `taskkill /F /IM node.exe`
+***
+Obs se till att skapa filen .gitignore
+
+Det är en fil som gör det möjligt att bestämma vilka filer/mappar som ska exkluderas från att publiceras på Github
+
+
 
 ***
-
-OBS - se till att skapa filen .gitignore
-
-Det är en fil som gör det möjligt att bestämma vilka filer/mappas som ska exkluderas från att publiceras på GitHub
-
-***
-
-#### Branch 1-hello
-Visa Hello World
+## Branch 1 hello
+Visa hello world
