@@ -1,4 +1,3 @@
-
 // dependencies
 import express from 'express';
 import ejs from 'ejs';
@@ -13,22 +12,37 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 // listen to requests
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
 
-// listen to '/start' och ange template metoden render()
-app.get('/start', (req, res) => {   
-    res.render('index');
-});
+// use route modules
+import routeStart from './routes/start.js';
+app.use('/start', routeStart);
+app.use('/', routeStart);
 
-// listen to '/about'  och ange template metoden render()
-app.get('/about', (req, res) => {
-    res.render('about');
-});
+import routeContact from './routes/contact.js';
+app.use('/contact', routeContact);
+
+import routeAbout from './routes/about.js';
+app.use('/about', routeAbout);
 
 // serve static files
 app.use(express.static('public'));
+
+// handle errors
+
+// 404 not found
+app.get('*', (req, res, next) => {
+    res.render('404');
+});
+
+// server error 500...
+// leading fourth argument is default an error...
+app.use((err, req, res, next) => {
+
+    // log error to file...
+
+    // show response
+    return res.status(500).send("Server error, please return later");
+});
 
 // start server
 app.listen(port, () => {
